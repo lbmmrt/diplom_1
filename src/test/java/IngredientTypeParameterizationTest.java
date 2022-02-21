@@ -10,24 +10,24 @@ import static praktikum.IngredientType.SAUCE;
 @RunWith(Parameterized.class)
 public class IngredientTypeParameterizationTest {
 
+    private final String expected;
     private final IngredientType actual;
-    private final IngredientType expected;
 
-    public IngredientTypeParameterizationTest(IngredientType actual, IngredientType expected) {
+    public IngredientTypeParameterizationTest(String expected, IngredientType actual) {
         this.actual = actual;
         this.expected = expected;
     }
 
     @Parameterized.Parameters
-    public static Object[][] getEnum() {
+    public static Object[][] setIngredient() {
         return new Object[][]{
-                {SAUCE, SAUCE},
-                {FILLING, FILLING},
+                {"SAUCE", SAUCE},
+                {"FILLING", FILLING},
         };
     }
 
     @Test
     public void checkEnumIngredientType() {
-        assertEquals(IngredientType.valueOf(String.valueOf(actual)), expected);
+        assertEquals(expected, String.valueOf(actual));
     }
 }

@@ -18,6 +18,7 @@ public class BurgerTest {
 
     Burger burger = new Burger();
 
+    @Mock
     Database database = new Database();
 
     Random rn = new Random();
